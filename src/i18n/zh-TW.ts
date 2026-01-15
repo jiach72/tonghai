@@ -270,7 +270,7 @@ const zhTW = {
         disclaimer: '本網站內容僅供一般資訊與客戶教育之用,不構成法律、稅務或投資建議。具體方案需依個案背景與當地法規評估,並由持牌/合資格專業人士提供意見。',
         copyright: '© 2026 通海南洋咨詢有限公司 版權所有'
     }
-} as const
+}
 
 export type MessageSchema = typeof zhTW
 export default zhTW

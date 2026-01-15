@@ -182,31 +182,7 @@ const formRules: FormRules = {
   ]
 }
 
-interface ServiceOption {
-  value: string
-}
-
-interface TimelineOption {
-  value: string
-}
-
-const serviceOptions: ServiceOption[] = [
-  { value: 'corporate' },
-  { value: 'identity' },
-  { value: 'asset' },
-  { value: 'education' },
-  { value: 'other' }
-]
-
-const timelineOptions: TimelineOption[] = [
-  { value: '1month' },
-  { value: '3months' },
-  { value: '6months' },
-  { value: 'exploring' }
-]
-
-const whyContactReasons = [0, 1, 2, 3]
-
+// handleSubmit handles the form submission
 const handleSubmit = async (): Promise<void> => {
   if (!contactFormRef.value) return
 

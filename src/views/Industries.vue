@@ -76,7 +76,7 @@ import {
   SuccessFilled
 } from '@element-plus/icons-vue'
 
-const { t, tm, locale } = useI18n()
+const { tm, locale } = useI18n()
 const router = useRouter()
 
 const industryItems = computed(() => {

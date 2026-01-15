@@ -73,7 +73,7 @@
         </h2>
         <div class="steps-grid">
           <div 
-            v-for="(step, index) in steps" 
+            v-for="(_, index) in steps" 
             :key="index"
             class="step-card"
           >

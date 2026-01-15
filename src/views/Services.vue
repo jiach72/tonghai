@@ -22,7 +22,7 @@
                 <h3>{{ $t('services.corporate.basic.title') }}</h3>
                 <el-row :gutter="20">
                   <el-col 
-                    v-for="(item, index) in corporateBasicServices" 
+                    v-for="(_, index) in corporateBasicServices" 
                     :key="index"
                     :lg="8" 
                     :md="12" 
@@ -84,7 +84,7 @@
                   <div class="service-section">
                     <h3>{{ $t('services.asset.financial.title') }}</h3>
                     <ul class="service-list">
-                      <li v-for="(item, index) in financialServices" :key="index">
+                      <li v-for="(_, index) in financialServices" :key="index">
                         <el-icon><Check /></el-icon>
                         <span>{{ $t(`services.asset.financial.items.${index}`) }}</span>
                       </li>
@@ -95,7 +95,7 @@
                   <div class="service-section">
                     <h3>{{ $t('services.asset.realestate.title') }}</h3>
                     <ul class="service-list">
-                      <li v-for="(item, index) in realestateServices" :key="index">
+                      <li v-for="(_, index) in realestateServices" :key="index">
                         <el-icon><Check /></el-icon>
                         <span>{{ $t(`services.asset.realestate.items.${index}`) }}</span>
                       </li>
@@ -117,7 +117,7 @@
                   <div class="service-section">
                     <h3>{{ $t('services.identity.singapore.title') }}</h3>
                     <ul class="service-list">
-                      <li v-for="(item, index) in singaporeIdentity" :key="index">
+                      <li v-for="(_, index) in singaporeIdentity" :key="index">
                         <el-icon><Check /></el-icon>
                         <span>{{ $t(`services.identity.singapore.items.${index}`) }}</span>
                       </li>
@@ -128,7 +128,7 @@
                   <div class="service-section">
                     <h3>{{ $t('services.identity.malaysia.title') }}</h3>
                     <ul class="service-list">
-                      <li v-for="(item, index) in malaysiaIdentity" :key="index">
+                      <li v-for="(_, index) in malaysiaIdentity" :key="index">
                         <el-icon><Check /></el-icon>
                         <span>{{ $t(`services.identity.malaysia.items.${index}`) }}</span>
                       </li>
@@ -149,7 +149,7 @@
                 <div class="service-section">
                   <h3>{{ $t('services.education.planning.title') }}</h3>
                   <ul class="service-list">
-                    <li v-for="(item, index) in educationPlanning" :key="index">
+                    <li v-for="(_, index) in educationPlanning" :key="index">
                       <el-icon><Check /></el-icon>
                       <span>{{ $t(`services.education.planning.items.${index}`) }}</span>
                     </li>
@@ -173,7 +173,7 @@
               <div class="service-section">
                 <h3>{{ $t('services.brand.branding.title') }}</h3>
                 <ul class="service-list">
-                  <li v-for="(item, index) in brandingServices" :key="index">
+                  <li v-for="(_, index) in brandingServices" :key="index">
                     <el-icon><Check /></el-icon>
                     <span>{{ $t(`services.brand.branding.items.${index}`) }}</span>
                   </li>
@@ -183,7 +183,7 @@
               <div class="service-section">
                 <h3>{{ $t('services.brand.value.title') }}</h3>
                 <ul class="service-list">
-                  <li v-for="(item, index) in valueServices" :key="index">
+                  <li v-for="(_, index) in valueServices" :key="index">
                     <el-icon><Check /></el-icon>
                     <span>{{ $t(`services.brand.value.items.${index}`) }}</span>
                   </li>
@@ -227,7 +227,7 @@
                   <div class="service-section">
                     <h3>{{ $t('services.tax.taxation.title') }}</h3>
                     <ul class="service-list">
-                      <li v-for="(item, index) in taxServices" :key="index">
+                      <li v-for="(_, index) in taxServices" :key="index">
                         <el-icon><Check /></el-icon>
                         <span>{{ $t(`services.tax.taxation.items.${index}`) }}</span>
                       </li>
