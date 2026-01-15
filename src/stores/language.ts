@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-type Locale = 'zh-TW' | 'en'
+type Locale = 'zh-TW' | 'zh-CN' | 'en'
 
 export const useLanguageStore = defineStore('language', () => {
     const currentLocale = ref<Locale>((localStorage.getItem('locale') as Locale) || 'zh-TW')

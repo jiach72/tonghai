@@ -1,39 +1,44 @@
 /* 导入Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
 
-/* CSS变量 - 基于UI UX Pro Max的专业咨询配色方案 */
+/* CSS变量 - 暖色调优化配色方案 */
 :root {
-    /* Primary Colors - Navy Blue主题 */
-    --color-primary: #0F172A;
-    --color-primary-light: #1E293B;
-    --color-secondary: #334155;
+    /* Primary Colors - 提亮的蓝色主题 */
+    --color-primary: #1E3A5F;
+    --color-primary-light: #2D5A87;
+    --color-secondary: #4A7CAE;
 
-    /* CTA & Accent - Professional Blue */
-    --color-accent: #0369A1;
-    --color-accent-hover: #0284C7;
+    /* CTA & Accent - 活力蓝 */
+    --color-accent: #2563EB;
+    --color-accent-hover: #3B82F6;
 
-    /* Gold Accent - Premium touch */
+    /* Gold/Amber Accent - 温暖点缀（增强） */
     --color-gold: #F59E0B;
     --color-gold-light: #FBBF24;
+    --color-amber: #D97706;
+    --color-orange: #EA580C;
+    --color-warm-gradient: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
 
-    /* Background */
-    --color-bg: #F8FAFC;
-    --color-bg-secondary: #F1F5F9;
+    /* Background - 更温暖的色调 */
+    --color-bg: #FFFBF5;
+    --color-bg-secondary: #FEF7ED;
+    --color-bg-warm: #FFF8E7;
 
-    /* Text */
-    --color-text: #020617;
-    --color-text-muted: #475569;
-    --color-text-light: #64748B;
+    /* Text - 柔和处理 */
+    --color-text: #1F2937;
+    --color-text-muted: #6B7280;
+    --color-text-light: #9CA3AF;
 
-    /* Border */
-    --color-border: #E2E8F0;
-    --color-border-light: #F1F5F9;
+    /* Border - 温暖边框 */
+    --color-border: #E5E7EB;
+    --color-border-light: #F3F4F6;
+    --color-border-warm: #FDE68A;
 
     /* Element Plus主题颜色覆盖 */
-    --el-color-primary: #0369A1;
-    --el-color-primary-light-3: #0284C7;
-    --el-color-primary-light-5: #38BDF8;
-    --el-color-primary-dark-2: #075985;
+    --el-color-primary: #2563EB;
+    --el-color-primary-light-3: #3B82F6;
+    --el-color-primary-light-5: #60A5FA;
+    --el-color-primary-dark-2: #1D4ED8;
 
     /* Typography */
     --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -54,13 +59,14 @@
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
 
-    /* Shadows - Soft UI Evolution */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.08);
-    --shadow-card-hover: 0 8px 24px rgba(15, 23, 42, 0.12);
+    /* Shadows - 带暖色调的柔和阴影 */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+    --shadow-card: 0 2px 8px rgba(30, 58, 95, 0.06);
+    --shadow-card-hover: 0 8px 24px rgba(30, 58, 95, 0.10);
+    --shadow-warm: 0 4px 14px rgba(245, 158, 11, 0.15);
 }
 
 /* 全局重置 */

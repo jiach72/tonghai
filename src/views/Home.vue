@@ -2,6 +2,20 @@
   <div class="home">
     <!-- Hero Section -->
     <section class="hero">
+      <!-- 背景视频 -->
+      <div class="hero-video-wrapper">
+        <video 
+          class="hero-video"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        >
+          <source src="/Singapore_Skyline_Sunset_Loop.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <!-- 视频遮罩层 -->
+      <div class="hero-overlay"></div>
       <div class="hero-bg"></div>
       <div class="container hero-content">
         <div class="hero-text">
@@ -202,11 +216,46 @@ const goToContact = (): void => {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 600px;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 40%, var(--color-secondary) 100%);
+}
+
+/* 背景视频容器 */
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* 背景视频 */
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 视频遮罩层 - 确保文字可读性 */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg, 
+    rgba(30, 58, 95, 0.85) 0%, 
+    rgba(45, 90, 135, 0.75) 40%, 
+    rgba(74, 124, 174, 0.70) 100%
+  );
+  z-index: 1;
 }
 
 .hero-bg {
@@ -216,14 +265,15 @@ const goToContact = (): void => {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(3, 105, 161, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
-  z-index: 0;
+    radial-gradient(ellipse at 20% 30%, rgba(251, 191, 36, 0.20) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(245, 158, 11, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 60% 90%, rgba(234, 88, 12, 0.10) 0%, transparent 40%);
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   padding: var(--spacing-3xl) 0;
 }
 
@@ -299,50 +349,59 @@ const goToContact = (): void => {
 /* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .service-card {
   padding: var(--spacing-2xl);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -20px rgba(3, 105, 161, 0.2);
   border-color: var(--color-accent);
-  transform: translateY(-4px);
 }
 
 .service-icon-wrapper {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-gold) 100%);
-  border-radius: var(--radius-lg);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 80%, var(--color-gold) 100%);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spacing-lg);
   color: white;
-  font-size: 2rem;
+  box-shadow: var(--shadow-warm);
 }
 
 .service-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .service-title {
-  font-size: 1.375rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .service-desc {
   color: var(--color-text-muted);
-  line-height: 1.6;
-  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
 }
 
 .service-link {
@@ -352,11 +411,13 @@ const goToContact = (): void => {
   color: var(--color-accent);
   font-weight: 600;
   text-decoration: none;
-  transition: gap 0.2s ease;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .service-link:hover {
   gap: var(--spacing-sm);
+  color: var(--color-accent-hover);
 }
 
 .link-arrow {
@@ -381,7 +442,7 @@ const goToContact = (): void => {
 .step-number {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-gold) 100%);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-orange) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -390,7 +451,7 @@ const goToContact = (): void => {
   font-weight: 800;
   color: white;
   margin: 0 auto var(--spacing-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-warm);
 }
 
 .step-title {
@@ -434,7 +495,8 @@ const goToContact = (): void => {
 .reason-icon-wrapper {
   width: 56px;
   height: 56px;
-  background: rgba(3, 105, 161, 0.1);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(245, 158, 11, 0.12) 100%);
+  border: 2px solid var(--color-border-warm);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
@@ -442,6 +504,14 @@ const goToContact = (): void => {
   margin: 0 auto var(--spacing-lg);
   color: var(--color-accent);
   font-size: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.reason-card:hover .reason-icon-wrapper {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-orange) 100%);
+  border-color: transparent;
+  color: white;
+  box-shadow: var(--shadow-warm);
 }
 
 .reason-icon {
@@ -523,7 +593,7 @@ const goToContact = (): void => {
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 500px;
+    min-height: 85vh;
   }
 
   .hero-title {
