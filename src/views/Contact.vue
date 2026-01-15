@@ -103,7 +103,7 @@
                   <el-icon class="info-icon"><Location /></el-icon>
                   <div>
                     <h4>地址</h4>
-                    <p>新加坡總部（具體地址待補充）</p>
+                    <p>20 Anson Road, Level 6, #06-66, Twenty Anson, Singapore 079912</p>
                   </div>
                 </div>
 
@@ -111,7 +111,7 @@
                   <el-icon class="info-icon"><Message /></el-icon>
                   <div>
                     <h4>Email</h4>
-                    <p><a href="mailto:contact@tonghainanyang.com">contact@tonghainanyang.com</a></p>
+                    <p><a href="mailto:admin@tonghainanyang.com">admin@tonghainanyang.com</a></p>
                   </div>
                 </div>
 
