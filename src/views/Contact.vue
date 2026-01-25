@@ -3,8 +3,8 @@
     <!-- Page Hero -->
     <section class="page-hero gradient-bg">
       <div class="container">
-        <h1 class="page-title">聯絡我們</h1>
-        <p class="page-subtitle">讓我們了解您的目標，提供專業的解決方案</p>
+        <h1 class="page-title">{{ t('contact.pageTitle') }}</h1>
+        <p class="page-subtitle">{{ t('contact.pageSubtitle') }}</p>
       </div>
     </section>
 
@@ -15,8 +15,8 @@
           <!-- Contact Form -->
           <el-col :lg="14" :md="24">
             <div class="contact-form-wrapper">
-              <h2 class="form-title">填寫諮詢表單</h2>
-              <p class="form-subtitle">請填寫以下信息，我們的顧問將在24小時內與您聯繫，提供初步評估方案。</p>
+              <h2 class="form-title">{{ t('contact.form.title') }}</h2>
+              <p class="form-subtitle">{{ t('contact.form.subtitle') }}</p>
               
               <el-form 
                 ref="contactFormRef"
@@ -26,55 +26,55 @@
                 class="contact-form"
                 @submit.prevent="handleSubmit"
               >
-                <el-form-item label="姓名" prop="name">
+                <el-form-item :label="t('contact.form.name')" prop="name">
                   <el-input 
                     v-model="contactForm.name" 
-                    placeholder="請輸入您的姓名"
+                    :placeholder="t('contact.form.namePlaceholder')"
                     size="large"
                   />
                 </el-form-item>
 
-                <el-form-item label="公司/家族名稱" prop="company">
+                <el-form-item :label="t('contact.form.company')" prop="company">
                   <el-input 
                     v-model="contactForm.company" 
-                    placeholder="請輸入公司或家族名稱（選填）"
+                    :placeholder="t('contact.form.companyPlaceholder')"
                     size="large"
                   />
                 </el-form-item>
 
-                <el-form-item label="您感興趣的服務" prop="services">
+                <el-form-item :label="t('contact.form.services.label')" prop="services">
                   <el-checkbox-group v-model="contactForm.services">
-                    <el-checkbox label="corporate">企業出海與銀行開戶</el-checkbox>
-                    <el-checkbox label="identity">身份規劃 (EP/PR/MM2H)</el-checkbox>
-                    <el-checkbox label="asset">資產與稅務架構 (VCC/信託)</el-checkbox>
-                    <el-checkbox label="education">教育留學規劃</el-checkbox>
-                    <el-checkbox label="other">其他</el-checkbox>
+                    <el-checkbox label="corporate">{{ t('contact.form.services.corporate') }}</el-checkbox>
+                    <el-checkbox label="identity">{{ t('contact.form.services.identity') }}</el-checkbox>
+                    <el-checkbox label="asset">{{ t('contact.form.services.asset') }}</el-checkbox>
+                    <el-checkbox label="education">{{ t('contact.form.services.education') }}</el-checkbox>
+                    <el-checkbox label="other">{{ t('contact.form.services.other') }}</el-checkbox>
                   </el-checkbox-group>
                 </el-form-item>
 
-                <el-form-item label="預計啟動時間" prop="timeline">
+                <el-form-item :label="t('contact.form.timeline.label')" prop="timeline">
                   <el-radio-group v-model="contactForm.timeline">
-                    <el-radio label="1month">1個月內急需</el-radio>
-                    <el-radio label="3months">3個月內</el-radio>
-                    <el-radio label="6months">半年內規劃</el-radio>
-                    <el-radio label="exploring">僅先了解/觀望</el-radio>
+                    <el-radio label="1month">{{ t('contact.form.timeline.1month') }}</el-radio>
+                    <el-radio label="3months">{{ t('contact.form.timeline.3months') }}</el-radio>
+                    <el-radio label="6months">{{ t('contact.form.timeline.6months') }}</el-radio>
+                    <el-radio label="exploring">{{ t('contact.form.timeline.exploring') }}</el-radio>
                   </el-radio-group>
                 </el-form-item>
 
-                <el-form-item label="聯絡方式" prop="contactMethod">
+                <el-form-item :label="t('contact.form.contactMethod.label')" prop="contactMethod">
                   <el-input 
                     v-model="contactForm.contactMethod" 
-                    placeholder="手機/微信/WhatsApp/Email"
+                    :placeholder="t('contact.form.contactMethod.placeholder')"
                     size="large"
                   />
                 </el-form-item>
 
-                <el-form-item label="補充說明" prop="message">
+                <el-form-item :label="t('contact.form.message.label')" prop="message">
                   <el-input 
                     v-model="contactForm.message" 
                     type="textarea"
                     :rows="4"
-                    placeholder="請告訴我們更多關於您的需求..."
+                    :placeholder="t('contact.form.message.placeholder')"
                   />
                 </el-form-item>
 
@@ -86,7 +86,7 @@
                     :loading="submitting"
                     @click="handleSubmit"
                   >
-                    送出諮詢
+                    {{ t('contact.form.submit') }}
                   </el-button>
                 </el-form-item>
               </el-form>
@@ -97,20 +97,20 @@
           <el-col :lg="10" :md="24">
             <div class="contact-info-wrapper">
               <div class="contact-info-card card">
-                <h3>聯絡信息</h3>
+                <h3>{{ t('contact.info.title') }}</h3>
                 
                 <div class="info-item">
                   <el-icon class="info-icon"><Location /></el-icon>
                   <div>
-                    <h4>地址</h4>
-                    <p>20 Anson Road, Level 6, #06-66, Twenty Anson, Singapore 079912</p>
+                    <h4>{{ t('contact.info.address.title') }}</h4>
+                    <p>{{ t('contact.info.address.content') }}</p>
                   </div>
                 </div>
 
                 <div class="info-item">
                   <el-icon class="info-icon"><Message /></el-icon>
                   <div>
-                    <h4>Email</h4>
+                    <h4>{{ t('contact.info.email.title') }}</h4>
                     <p><a href="mailto:admin@tonghainanyang.com">admin@tonghainanyang.com</a></p>
                   </div>
                 </div>
@@ -118,19 +118,18 @@
                 <div class="info-item">
                   <el-icon class="info-icon"><Clock /></el-icon>
                   <div>
-                    <h4>工作時間</h4>
-                    <p>Mon - Fri, 9:00 AM - 6:00 PM (SGT)</p>
+                    <h4>{{ t('contact.info.hours.title') }}</h4>
+                    <p>{{ t('contact.info.hours.content') }}</p>
                   </div>
                 </div>
               </div>
 
               <div class="why-contact card">
-                <h4>為什麼選擇我們？</h4>
+                <h4>{{ t('contact.why.title') }}</h4>
                 <ul>
-                  <li><el-icon><Check /></el-icon><span>專業團隊，持牌顧問</span></li>
-                  <li><el-icon><Check /></el-icon><span>全方位一站式服務</span></li>
-                  <li><el-icon><Check /></el-icon><span>透明合規，可追溯</span></li>
-                  <li><el-icon><Check /></el-icon><span>長期陪跑，承諾服務</span></li>
+                  <li v-for="(item, index) in whyItems" :key="index">
+                    <el-icon><Check /></el-icon><span>{{ item }}</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -142,12 +141,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
 import { Location, Message, Clock, Check } from '@element-plus/icons-vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
 interface ContactForm {
   name: string
@@ -170,17 +169,21 @@ const contactForm = reactive<ContactForm>({
   message: ''
 })
 
-const formRules: FormRules = {
+const formRules = computed<FormRules>(() => ({
   name: [
-    { required: true, message: '请输入您的姓名', trigger: 'blur' }
+    { required: true, message: t('contact.form.validation.name'), trigger: 'blur' }
   ],
   contactMethod: [
-    { required: true, message: '请提供联系方式', trigger: 'blur' }
+    { required: true, message: t('contact.form.validation.contactMethod'), trigger: 'blur' }
   ],
   services: [
-    { required: true, message: '请至少选择一项服务', trigger: 'change' }
+    { required: true, message: t('contact.form.validation.services'), trigger: 'change' }
   ]
-}
+}))
+
+const whyItems = computed(() => {
+    return tm('contact.why.items') as string[]
+})
 
 // handleSubmit handles the form submission
 const handleSubmit = async (): Promise<void> => {

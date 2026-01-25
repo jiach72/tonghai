@@ -3,22 +3,18 @@
     <!-- Page Hero -->
     <section class="page-hero gradient-bg">
       <div class="container">
-        <h1 class="page-title">關於我們</h1>
-        <p class="page-subtitle">企業主在不確定時代裡的"第二駕駛艙"</p>
+        <h1 class="page-title">{{ t('about.pageTitle') }}</h1>
+        <p class="page-subtitle">{{ t('about.pageSubtitle') }}</p>
       </div>
     </section>
 
     <!-- Brand Story -->
     <section class="section brand-story">
       <div class="container">
-        <h2 class="section-title text-center">品牌故事</h2>
+        <h2 class="section-title text-center">{{ t('about.brandStory.title') }}</h2>
         <div class="story-content">
-          <p class="story-text">
-            在全球經濟充滿不確定性的當下，企業出海不僅僅是物理空間的轉移，更是戰略視野的升級。<strong>通海南洋 (TongHai Nanyang)</strong> 總部位於新加坡，深耕新馬雙市場。我們不僅僅是您的出海服務商，更是企業主在風浪中的<strong>"第二駕駛艙"</strong>。
-          </p>
-          <p class="story-text">
-            我們匯聚了金融、法律、教育與稅務領域的頂尖專家，致力於為台灣企業家、跨國企業主及高淨值家族提供「企業落地 + 身份規劃 + 資產架構」的一站式跨境解決方案。我們堅持<strong>合規優先</strong>，以<strong>長期陪跑</strong>為承諾，助您在南洋這片熱土上，穩健出海，傳承未來。
-          </p>
+          <p class="story-text" v-html="t('about.brandStory.paragraph1')"></p>
+          <p class="story-text" v-html="t('about.brandStory.paragraph2')"></p>
         </div>
       </div>
     </section>
@@ -26,34 +22,34 @@
     <!-- Core Values -->
     <section class="section core-values bg-white">
       <div class="container">
-        <h2 class="section-title text-center">核心價值觀</h2>
+        <h2 class="section-title text-center">{{ t('about.coreValues.title') }}</h2>
         <el-row :gutter="32">
           <el-col :lg="6" :md="12" :sm="24">
             <div class="value-card card">
               <div class="value-icon"><el-icon><Check /></el-icon></div>
-              <h3>合規優先</h3>
-              <p>嚴格遵循當地法律法規，確保業務架構穩健安全</p>
+              <h3>{{ t('about.coreValues.compliance.title') }}</h3>
+              <p>{{ t('about.coreValues.compliance.desc') }}</p>
             </div>
           </el-col>
           <el-col :lg="6" :md="12" :sm="24">
             <div class="value-card card">
               <div class="value-icon"><el-icon><TrendCharts /></el-icon></div>
-              <h3>以終為始</h3>
-              <p>量身定制最適合的落地與傳承方案</p>
+              <h3>{{ t('about.coreValues.goalOriented.title') }}</h3>
+              <p>{{ t('about.coreValues.goalOriented.desc') }}</p>
             </div>
           </el-col>
           <el-col :lg="6" :md="12" :sm="24">
             <div class="value-card card">
               <div class="value-icon"><el-icon><DocumentChecked /></el-icon></div>
-              <h3>透明可追溯</h3>
-              <p>關鍵節點可追溯，每一次決策都有據可依</p>
+              <h3>{{ t('about.coreValues.transparency.title') }}</h3>
+              <p>{{ t('about.coreValues.transparency.desc') }}</p>
             </div>
           </el-col>
           <el-col :lg="6" :md="12" :sm="24">
             <div class="value-card card">
               <div class="value-icon"><el-icon><Connection /></el-icon></div>
-              <h3>長期陪跑</h3>
-              <p>長期陪伴企業成長與家族傳承</p>
+              <h3>{{ t('about.coreValues.longTerm.title') }}</h3>
+              <p>{{ t('about.coreValues.longTerm.desc') }}</p>
             </div>
           </el-col>
         </el-row>
@@ -63,35 +59,35 @@
     <!-- Core Team -->
     <section class="section core-team">
       <div class="container">
-        <h2 class="section-title text-center">核心團隊</h2>
+        <h2 class="section-title text-center">{{ t('about.coreTeam.title') }}</h2>
         
         <div class="team-intro">
-          <p>我們的團隊由資深金融專家、律師、教育顧問和商業策略師組成，為您提供全方位專業服務。</p>
+          <p>{{ t('about.coreTeam.intro') }}</p>
         </div>
 
         <el-row :gutter="32" class="team-grid">
           <el-col :lg="8" :md="12" :sm="24">
             <div class="team-member-card card">
               <div class="member-avatar"><el-icon><Avatar /></el-icon></div>
-              <h4>Ada 黃芊惠</h4>
-              <p class="member-title">創始人 | CEO</p>
-              <p class="member-bio">Finexis Advisory 總監，18年新加坡金融經驗，CFP® 認證顧問</p>
+              <h4>{{ t('about.coreTeam.members.ada.name') }}</h4>
+              <p class="member-title">{{ t('about.coreTeam.members.ada.position') }}</p>
+              <p class="member-bio">{{ t('about.coreTeam.members.ada.bio') }}</p>
             </div>
           </el-col>
           <el-col :lg="8" :md="12" :sm="24">
             <div class="team-member-card card">
               <div class="member-avatar"><el-icon><Avatar /></el-icon></div>
-              <h4>Mars 楊棟</h4>
-              <p class="member-title">聯合創始人</p>
-              <p class="member-bio">新加坡文化與教育協會會長，28年國際教育經驗</p>
+              <h4>{{ t('about.coreTeam.members.mars.name') }}</h4>
+              <p class="member-title">{{ t('about.coreTeam.members.mars.position') }}</p>
+              <p class="member-bio">{{ t('about.coreTeam.members.mars.bio') }}</p>
             </div>
           </el-col>
           <el-col :lg="8" :md="12" :sm="24">
             <div class="team-member-card card">
               <div class="member-avatar"><el-icon><Avatar /></el-icon></div>
-              <h4>Wendy 魏文帝</h4>
-              <p class="member-title">台灣執行官</p>
-              <p class="member-bio">創投公司 CEO，20年企業顧問經驗</p>
+              <h4>{{ t('about.coreTeam.members.wendy.name') }}</h4>
+              <p class="member-title">{{ t('about.coreTeam.members.wendy.position') }}</p>
+              <p class="member-bio">{{ t('about.coreTeam.members.wendy.bio') }}</p>
             </div>
           </el-col>
         </el-row>
@@ -102,10 +98,10 @@
     <section class="section cta-section gradient-bg">
       <div class="container">
         <div class="cta-content text-center">
-          <h2 class="cta-title">與我們的專家團隊見面</h2>
-          <p class="cta-subtitle">預約會議，了解我們如何協助您的業務成長</p>
+          <h2 class="cta-title">{{ t('about.cta.title') }}</h2>
+          <p class="cta-subtitle">{{ t('about.cta.subtitle') }}</p>
           <el-button type="primary" size="large" class="cta-button" @click="goToContact">
-            預約諮詢
+            {{ t('about.cta.button') }}
           </el-button>
         </div>
       </div>
@@ -115,8 +111,10 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { Avatar, Check, DocumentChecked, Connection, TrendCharts } from '@element-plus/icons-vue'
 
+const { t } = useI18n()
 const router = useRouter()
 
 const goToContact = (): void => {
@@ -215,11 +213,20 @@ const goToContact = (): void => {
   border-bottom: 3px solid var(--color-accent);
 }
 
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-2xl);
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+}
+
 .team-member-card {
   padding: var(--spacing-xl);
   height: 100%;
   margin-bottom: var(--spacing-lg);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .team-member-card:hover {
@@ -245,6 +252,7 @@ const goToContact = (): void => {
   flex-shrink: 0;
   color: white;
   font-size: 2rem;
+  margin: 0 auto var(--spacing-md);
 }
 
 .member-info {

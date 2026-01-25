@@ -22,7 +22,17 @@ const zhCN: MessageSchema = {
                 priority: {
                     title: '零售高级账户 (Priority Banking)',
                     bank: '银行',
-                    requirement: '最低存款要求'
+                    requirement: '最低存款要求',
+                    rows: [
+                        { bank: 'OCBC 华侨银行', requirement: 'S$350,000' },
+                        { bank: 'UOB 大华银行', requirement: 'S$350,000' },
+                        { bank: 'DBS 星展银行', requirement: 'S$350,000' },
+                        { bank: 'HSBC 汇丰银行', requirement: 'S$350,000' },
+                        { bank: 'Maybank 马来亚银行', requirement: 'S$350,000' },
+                        { bank: 'Citibank 花旗银行', requirement: 'S$280,000' },
+                        { bank: 'CIMB 联昌银行', requirement: 'S$250,000' },
+                        { bank: 'Standard Chartered 渣打银行', requirement: 'US$200,000' }
+                    ]
                 },
                 private: {
                     title: '私人银行账户 (Private Banking)',
@@ -273,6 +283,72 @@ const zhCN: MessageSchema = {
         contactInfo: '联络资讯',
         disclaimer: '本网站内容仅供一般资讯与客户教育之用,不构成法律、税务或投资建议。具体方案需依个案背景与当地法规评估,并由持牌/合资格专业人士提供意见。',
         copyright: '© 2026 通海南洋咨询有限公司 版权所有'
+    },
+    contact: {
+        pageTitle: '联络我们',
+        pageSubtitle: '让我们了解您的目标，提供专业的解决方案',
+        form: {
+            title: '填写咨询表单',
+            subtitle: '请填写以下信息，我们的顾问将在24小时内与您联系，提供初步评估方案。',
+            name: '姓名',
+            namePlaceholder: '请输入您的姓名',
+            company: '公司/家族名称',
+            companyPlaceholder: '请输入公司或家族名称（选填）',
+            services: {
+                label: '您感兴趣的服务',
+                corporate: '企业出海与银行开户',
+                identity: '身份规划 (EP/PR/MM2H)',
+                asset: '资产与税务架构 (VCC/信托)',
+                education: '教育留学规划',
+                other: '其他'
+            },
+            timeline: {
+                label: '预计启动时间',
+                '1month': '1个月内急需',
+                '3months': '3个月内',
+                '6months': '半年内规划',
+                exploring: '仅先了解/观望'
+            },
+            contactMethod: {
+                label: '联系方式',
+                placeholder: '手机/微信/WhatsApp/Email'
+            },
+            message: {
+                label: '补充说明',
+                placeholder: '请告诉我们更多关于您的需求...'
+            },
+            submit: '送出咨询',
+            successMessage: '提交成功！我们会尽快与您联系。',
+            errorMessage: '提交失败，请重试。',
+            validation: {
+                name: '请输入您的姓名',
+                contactMethod: '请提供联系方式',
+                services: '请至少选择一项服务'
+            }
+        },
+        info: {
+            title: '联络信息',
+            address: {
+                title: '地址',
+                content: '20 Anson Road, Level 6, #06-66, Twenty Anson, Singapore 079912'
+            },
+            email: {
+                title: 'Email'
+            },
+            hours: {
+                title: '工作时间',
+                content: 'Mon - Fri, 9:00 AM - 6:00 PM (SGT)'
+            }
+        },
+        why: {
+            title: '为什么选择我们？',
+            items: [
+                '专业团队，持牌顾问',
+                '全方位一站式服务',
+                '透明合规，可追溯',
+                '长期陪跑，承诺服务'
+            ]
+        }
     }
 }
 

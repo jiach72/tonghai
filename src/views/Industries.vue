@@ -8,41 +8,36 @@
       </div>
     </section>
 
-    <!-- Industry Cards Section -->
+    <!-- Industry Grid Section -->
     <section class="section industries-content">
       <div class="container">
-        <div v-for="item in industryItems" :key="item.id" class="industry-card card">
-          <el-row :gutter="48" align="middle">
-            <el-col :lg="8" :md="24">
-              <div class="industry-header">
-                <div class="industry-icon">
-                  <component :is="getIcon(item.id)" />
-                </div>
-                <h2 class="industry-title">
-                  {{ locale === 'zh-TW' ? item.title : item.titleEn }}
-                </h2>
-                <div class="industry-divider"></div>
+        <div class="industries-grid">
+          <div v-for="item in industryItems" :key="item.id" class="industry-card hover-lift">
+            <div class="card-header">
+              <div class="industry-icon-wrapper">
+                <component :is="getIcon(item.id)" class="industry-icon" />
               </div>
-            </el-col>
-            <el-col :lg="16" :md="24">
-              <div class="industry-details">
-                <div class="detail-block pain-points">
-                  <h3 class="detail-label">
-                    <el-icon><Warning /></el-icon>
-                    {{ $t('industries.labels.painPoints') }}
-                  </h3>
-                  <p class="detail-text">{{ item.painPoint }}</p>
+              <h2 class="industry-title">{{ item.title }}</h2>
+            </div>
+            
+            <div class="card-body">
+              <div class="detail-box pain-point">
+                <div class="box-header">
+                  <el-icon class="status-icon"><Warning /></el-icon>
+                  <span>{{ $t('industries.labels.painPoints') }}</span>
                 </div>
-                <div class="detail-block solution">
-                  <h3 class="detail-label">
-                    <el-icon><SuccessFilled /></el-icon>
-                    {{ $t('industries.labels.solutions') }}
-                  </h3>
-                  <p class="detail-text">{{ item.solution }}</p>
-                </div>
+                <p class="box-text">{{ item.painPoint }}</p>
               </div>
-            </el-col>
-          </el-row>
+
+              <div class="detail-box solution">
+                <div class="box-header">
+                  <el-icon class="status-icon"><SuccessFilled /></el-icon>
+                  <span>{{ $t('industries.labels.solutions') }}</span>
+                </div>
+                <p class="box-text">{{ item.solution }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -76,7 +71,7 @@ import {
   SuccessFilled
 } from '@element-plus/icons-vue'
 
-const { tm, locale } = useI18n()
+const { tm } = useI18n()
 const router = useRouter()
 
 const industryItems = computed(() => {
@@ -102,7 +97,7 @@ const goToContact = () => {
 <style scoped>
 /* Page Hero */
 .page-hero {
-  padding: var(--spacing-3xl) 0;
+  padding: 6rem 0;
   text-align: center;
   color: white;
 }
@@ -121,96 +116,126 @@ const goToContact = () => {
   margin: 0 auto;
 }
 
-/* Industry Cards */
+/* Industries Grid */
 .industries-content {
+  padding: 4rem 0;
   background: var(--color-bg);
 }
 
-.industry-card {
-  padding: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(15, 23, 42, 0.05);
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.industry-card:hover {
-  transform: translateY(-4px);
+/* Industry Card */
+.industry-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
   border-color: var(--color-accent);
 }
 
-.industry-header {
+/* Card Header */
+.card-header {
   text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-bg-secondary);
 }
 
-.industry-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-gold) 100%);
+.industry-icon-wrapper {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, white 100%);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--spacing-lg);
+  margin: 0 auto 1.5rem;
+  color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.industry-card:hover .industry-icon-wrapper {
+  background: var(--color-accent);
   color: white;
-  font-size: 2.5rem;
-  box-shadow: 0 8px 20px rgba(3, 105, 161, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.industry-icon {
+  font-size: 2rem;
 }
 
 .industry-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
+  margin: 0;
   line-height: 1.3;
 }
 
-.industry-divider {
-  width: 40px;
-  height: 4px;
-  background: var(--color-gold);
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-.industry-details {
+/* Card Body */
+.card-body {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: 1.5rem;
+  flex: 1;
 }
 
-.detail-block {
-  padding-left: var(--spacing-md);
+.detail-box {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  flex: 1;
 }
 
-.pain-points {
-  border-left: 3px solid #EF4444; /* Alert/Warning Red */
+.pain-point {
+  background: #FEF2F2; /* Red-50 */
+  border: 1px solid #FEE2E2; /* Red-100 */
 }
 
 .solution {
-  border-left: 3px solid #10B981; /* Success Green */
+  background: #ECFDF5; /* Green-50 */
+  border: 1px solid #D1FAE5; /* Green-100 */
 }
 
-.detail-label {
+.box-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
-  font-size: 1.125rem;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-primary);
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.pain-points .detail-label {
-  color: #EF4444;
+.pain-point .box-header {
+  color: #EF4444; /* Red-500 */
 }
 
-.solution .detail-label {
-  color: #10B981;
+.solution .box-header {
+  color: #10B981; /* Green-500 */
 }
 
-.detail-text {
-  font-size: 1.1rem;
+.status-icon {
+  font-size: 1.125rem;
+}
+
+.box-text {
+  font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--color-text);
   margin: 0;
@@ -218,7 +243,7 @@ const goToContact = () => {
 
 /* CTA Section */
 .cta-section {
-  padding: var(--spacing-3xl) 0;
+  padding: 6rem 0;
 }
 
 .cta-content {
@@ -230,50 +255,40 @@ const goToContact = () => {
   font-size: 2.5rem;
   font-weight: 700;
   color: white;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1rem;
 }
 
 .cta-subtitle {
-  font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--spacing-2xl);
-  line-height: 1.7;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .cta-button {
-  padding: 16px 48px;
+  padding: 1.25rem 3rem;
   font-size: 1.125rem;
   font-weight: 600;
-  background: white;
-  color: var(--color-primary);
-  border-color: white;
-  box-shadow: var(--shadow-xl);
-}
-
-.cta-button:hover {
-  background: var(--color-bg);
-  border-color: var(--color-bg);
-  transform: translateY(-2px);
 }
 
 /* Responsive */
-@media (max-width: 991px) {
-  .industry-header {
-    margin-bottom: var(--spacing-xl);
+@media (max-width: 1200px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .page-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   
   .industry-title {
-    font-size: 1.5rem;
-  }
-  
-  .cta-title {
-    font-size: 1.875rem;
+    font-size: 1.25rem;
   }
 }
 </style>

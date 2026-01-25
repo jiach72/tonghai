@@ -22,7 +22,17 @@ const en: MessageSchema = {
                 priority: {
                     title: 'Priority Banking',
                     bank: 'Bank',
-                    requirement: 'Minimum Deposit'
+                    requirement: 'Minimum Deposit',
+                    rows: [
+                        { bank: 'OCBC Bank', requirement: 'S$350,000' },
+                        { bank: 'UOB', requirement: 'S$350,000' },
+                        { bank: 'DBS Bank', requirement: 'S$350,000' },
+                        { bank: 'HSBC', requirement: 'S$350,000' },
+                        { bank: 'Maybank', requirement: 'S$350,000' },
+                        { bank: 'Citibank', requirement: 'S$280,000' },
+                        { bank: 'CIMB Bank', requirement: 'S$250,000' },
+                        { bank: 'Standard Chartered', requirement: 'US$200,000' }
+                    ]
                 },
                 private: {
                     title: 'Private Banking',
@@ -145,35 +155,35 @@ const en: MessageSchema = {
         items: [
             {
                 id: 'food',
-                title: '食品與保健品',
+                title: 'Food & Wellness',
                 titleEn: 'Food & Wellness',
                 painPoint: 'Complex local compliance, time-consuming supply chain certification, and branding localization barriers.',
                 solution: 'One-stop regulatory consulting, IFSS standard docking, and international brand upgrading.'
             },
             {
                 id: 'pharma',
-                title: '醫藥與醫療',
+                title: 'Pharma & Healthcare',
                 titleEn: 'Pharma & Healthcare',
                 painPoint: 'High barriers for medical device registration, difficulty in talent matching, and clinical resource gaps.',
                 solution: 'HSA registration assistance, OEL resource docking, and professional healthcare talent immigration planning.'
             },
             {
                 id: 'fintech',
-                title: '金融科技',
+                title: 'FinTech',
                 titleEn: 'FinTech',
                 painPoint: 'Long license application process, strict MAS compliance, and capital market accessibility issues.',
                 solution: 'Regulatory sandbox guidance, legal framework design, and capital market resource docking.'
             },
             {
                 id: 'ecommerce',
-                title: '跨境電商',
+                title: 'Cross-border E-commerce',
                 titleEn: 'Cross-border E-commerce',
                 painPoint: 'High tax costs, logistical inefficiencies, and fragmented ASEAN markets.',
                 solution: 'Regional tax structure optimization, FTA benefit utilization, and Singapore HQ setup solutions.'
             },
             {
                 id: 'familyoffice',
-                title: '家族辦公室與資產管理',
+                title: 'Family Office & Asset Management',
                 titleEn: 'Family Office & Asset Management',
                 painPoint: 'Shifting tax exemption thresholds, unstable asset structures, and lack of succession mechanisms.',
                 solution: '13O/13U tax incentive planning, VCC & Family Trust structuring, and long-term compliance support.'
@@ -266,6 +276,165 @@ const en: MessageSchema = {
             button: 'Book Consultation'
         }
     },
+    about: {
+        pageTitle: 'About Us',
+        pageSubtitle: 'Your "Second Cockpit" in Uncertain Times',
+        brandStory: {
+            title: 'Our Story',
+            paragraph1: 'In today\'s era of global economic uncertainty, going global is not just about physical relocation—it\'s about elevating your strategic vision. <strong>TongHai Nanyang</strong>, headquartered in Singapore, serves both Singapore and Malaysia markets. We are more than your market entry partner—we are your <strong>"Second Cockpit"</strong> navigating through turbulent waters.',
+            paragraph2: 'We bring together top experts in finance, law, education, and taxation, dedicated to providing Taiwanese entrepreneurs, multinational business owners, and high-net-worth families with integrated cross-border solutions covering business setup, identity planning, and asset structuring. We uphold <strong>compliance</strong> as our foundation and <strong>long-term partnership</strong> as our commitment, helping you expand with confidence and build a lasting legacy in Southeast Asia.'
+        },
+        coreValues: {
+            title: 'Core Values',
+            compliance: {
+                title: 'Compliance First',
+                desc: 'Strictly adhere to local laws and regulations, ensuring a robust and secure business structure'
+            },
+            goalOriented: {
+                title: 'Goal-Oriented',
+                desc: 'Tailor-made solutions for your unique business and succession needs'
+            },
+            transparency: {
+                title: 'Transparent & Traceable',
+                desc: 'Every decision is documented and traceable at key milestones'
+            },
+            longTerm: {
+                title: 'Long-Term Partnership',
+                desc: 'Committed to accompanying your business growth and family succession'
+            }
+        },
+        coreTeam: {
+            title: 'Core Team',
+            intro: 'Our team comprises senior financial experts, lawyers, education consultants, and business strategists, providing you with comprehensive professional services.',
+            members: {
+                ada: {
+                    name: 'Ada Huang',
+                    position: 'Founder | CEO',
+                    bio: 'Director at Finexis Advisory, 18 years of Singapore financial experience, CFP® Certified'
+                },
+                mars: {
+                    name: 'Mars Yang',
+                    position: 'Co-Founder',
+                    bio: 'President of Singapore Cultural and Education Association, 28 years of international education experience'
+                },
+                wendy: {
+                    name: 'Wendy Wei',
+                    position: 'Taiwan Executive',
+                    bio: 'Venture Capital CEO, 20 years of corporate consulting experience'
+                }
+            }
+        },
+        cta: {
+            title: 'Meet Our Expert Team',
+            subtitle: 'Schedule a meeting to learn how we can help grow your business',
+            button: 'Book Consultation'
+        }
+    },
+    team: {
+        pageTitle: 'Our Team',
+        pageSubtitle: 'Bringing together top experts in finance, law, education, and taxation to navigate your global expansion',
+        categories: {
+            founders: {
+                title: 'FOUNDERS & EXECUTIVES',
+                subtitle: 'Founders & Executives'
+            },
+            advisors: {
+                title: 'INDUSTRY ADVISORS',
+                subtitle: 'Industry Advisors (Legal, Finance, Logistics)'
+            },
+            consulting: {
+                title: 'CONSULTING & WEALTH',
+                subtitle: 'Business Consulting & Wealth Management Team'
+            },
+            regional: {
+                title: 'REGIONAL HEADS',
+                subtitle: 'Regional Representatives'
+            }
+        },
+        members: {
+            founders: {
+                ada: {
+                    name: 'Ada Huang',
+                    position: 'TongHai Nanyang Founder | CEO',
+                    tags: ['CFP®', 'WMI Family Office Advisor'],
+                    bio: ['Director at Finexis Advisory, BNI Singapore Po Fung Chapter President (2022-2023)', '18 years in Singapore, specialized in one-stop financial solutions including insurance, funds, family trusts, VCC, and banking.']
+                },
+                mars: {
+                    name: 'Mars Yang',
+                    position: 'Co-Founder | Cross-border Business Executive',
+                    tags: ['PhD in Mathematics, Beijing Academy of Social Sciences'],
+                    bio: ['President of Singapore Cultural and Education Association (CEAS), Dean of Singapore Cultural and Education Institute', '28 years of international education experience. Responsible for market research, identity & education planning, and local operations.']
+                },
+                wendy: {
+                    name: 'Wendy Wei',
+                    position: 'Cross-border Business Executive (Taiwan)',
+                    tags: ['Venture Capital CEO'],
+                    bio: ['Over 20 years of corporate consulting experience, skilled in resource integration and sales.', 'Sharp market analysis capabilities, providing professional landing advice for Taiwanese entrepreneurs.']
+                }
+            },
+            advisors: {
+                thomas: {
+                    name: 'Prof. Dr Thomas Sim',
+                    position: 'FIATA President | CEO of OceanBlue Logistics',
+                    desc: 'Chairman of Singapore Logistics Association, resource expert for World Bank and UNCTAD. Recipient of National Award from Singapore President.'
+                },
+                gavin: {
+                    name: 'Gavin Liu',
+                    position: 'Founder of Oriental Investment Holdings',
+                    desc: 'Over 30 years of financial experience, specialized in investment and tech company IPOs. Focused on healthcare, AI economy, and RWA technology.'
+                },
+                linus: {
+                    name: 'Linus Ng',
+                    position: 'Barrister at Donaldson & Burkinshaw',
+                    desc: 'Registered lawyer since 1998, focused on capital market financing, private equity, compliance consulting, and fintech legal services.'
+                },
+                ronald: {
+                    name: 'Ronald Chu',
+                    position: 'Founder of Ronald Chu Law Practice',
+                    desc: 'Member of Global Family Office (GFO) Association. Provides GIP, PR applications, family office setup, and probate services.'
+                }
+            },
+            consulting: {
+                wendyLiu: {
+                    name: 'Wendy Liu',
+                    position: 'Business Development Director, Finnex Pte Ltd',
+                    desc: '10 years of business consulting experience, partnered with over 60 banks. Specialized in corporate financing and market entry strategies.'
+                },
+                jevon: {
+                    name: 'Jevon He',
+                    position: 'Government Grants Consultant, Finnex Pte Ltd',
+                    desc: '25 years of business experience, KAH license holder. Expert in government grants consulting and corporate transformation.'
+                },
+                martin: {
+                    name: 'Martin Xu',
+                    position: 'Senior Financial Planner (Finexis)',
+                    desc: 'BSc from University of London. Years of experience in Singapore financial industry, providing wealth management services for HNW clients.'
+                }
+            },
+            regional: {
+                chenLi: {
+                    name: 'Chen Li',
+                    position: 'Sichuan Office Representative',
+                    desc: 'Based in Chengdu, assisting Chinese entrepreneurs to explore Southeast Asian markets with end-to-end global expansion solutions.'
+                },
+                mayLee: {
+                    name: 'May Lee',
+                    position: 'Malaysia Representative',
+                    desc: 'Chairman of Mr. Farmer Group, BNI Klang Senior Advisor. Expert in asset allocation, MM2H applications, and strategic planning.'
+                },
+                andy: {
+                    name: 'Andy Chia',
+                    position: 'Business Development Director, Jalin',
+                    desc: '20 years of financial services experience (UOB, HSBC). Strong Singapore-Malaysia financial network, offering cross-border financial and property services.'
+                }
+            }
+        },
+        cta: {
+            title: 'Consult Our Expert Team',
+            subtitle: 'Click below to schedule an in-depth discovery session with our consultants',
+            button: 'Book Expert Meeting'
+        }
+    },
     footer: {
         companyName: 'TongHai Nanyang',
         tagline: 'Expand with Confidence · Build a Legacy',
@@ -273,6 +442,72 @@ const en: MessageSchema = {
         contactInfo: 'Contact',
         disclaimer: 'Content on this website is for general information and client education only and does not constitute legal, tax, or investment advice. Recommendations are case-specific and subject to applicable laws and qualified/licensed professional advice.',
         copyright: '© 2026 TongHai Nanyang Consulting. All rights reserved.'
+    },
+    contact: {
+        pageTitle: 'Contact Us',
+        pageSubtitle: 'Let us understand your goals and provide professional solutions',
+        form: {
+            title: 'Consultation Form',
+            subtitle: 'Please fill in the information below. Our consultants will contact you within 24 hours with an initial assessment.',
+            name: 'Name',
+            namePlaceholder: 'Enter your name',
+            company: 'Company/Family Name',
+            companyPlaceholder: 'Enter company or family name (optional)',
+            services: {
+                label: 'Services of Interest',
+                corporate: 'Corporate & Banking',
+                identity: 'Residency Planning (EP/PR/MM2H)',
+                asset: 'Asset & Tax Structuring (VCC/Trust)',
+                education: 'Education Planning',
+                other: 'Other'
+            },
+            timeline: {
+                label: 'Expected Timeline',
+                '1month': 'Urgent (Within 1 month)',
+                '3months': 'Within 3 months',
+                '6months': 'Within 6 months',
+                exploring: 'Just exploring'
+            },
+            contactMethod: {
+                label: 'Contact Method',
+                placeholder: 'Mobile / WeChat / WhatsApp / Email'
+            },
+            message: {
+                label: 'Additional Information',
+                placeholder: 'Tell us more about your needs...'
+            },
+            submit: 'Submit Inquiry',
+            successMessage: 'Submitted successfully! We will contact you soon.',
+            errorMessage: 'Submission failed. Please try again.',
+            validation: {
+                name: 'Please enter your name',
+                contactMethod: 'Please provide contact information',
+                services: 'Please select at least one service'
+            }
+        },
+        info: {
+            title: 'Contact Information',
+            address: {
+                title: 'Address',
+                content: '20 Anson Road, Level 6, #06-66, Twenty Anson, Singapore 079912'
+            },
+            email: {
+                title: 'Email'
+            },
+            hours: {
+                title: 'Working Hours',
+                content: 'Mon - Fri, 9:00 AM - 6:00 PM (SGT)'
+            }
+        },
+        why: {
+            title: 'Why Choose Us?',
+            items: [
+                'Professional Licensed Consultants',
+                'One-Stop Comprehensive Service',
+                'Transparent & Compliant',
+                'Long-Term Commitment'
+            ]
+        }
     }
 }
 

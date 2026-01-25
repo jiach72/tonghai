@@ -3,8 +3,8 @@
     <!-- Page Hero -->
     <section class="page-hero gradient-bg">
       <div class="container">
-        <h1 class="page-title">我們的團隊</h1>
-        <p class="page-subtitle">匯聚金融、法律、教育與稅務領域的頂尖專家，為您的出海之路保駕護航</p>
+        <h1 class="page-title">{{ t('team.pageTitle') }}</h1>
+        <p class="page-subtitle">{{ t('team.pageSubtitle') }}</p>
       </div>
     </section>
 
@@ -13,10 +13,10 @@
       <div class="container">
         <!-- 1. 創始人與高管層 -->
         <div class="team-category">
-          <h2 class="category-title">FOUNDERS & EXECUTIVES</h2>
-          <h3 class="category-subtitle">創始人與高管層</h3>
+          <h2 class="category-title">{{ t('team.categories.founders.title') }}</h2>
+          <h3 class="category-subtitle">{{ t('team.categories.founders.subtitle') }}</h3>
           <el-row :gutter="32">
-            <el-col v-for="member in founders" :key="member.name" :lg="8" :md="12" :sm="24">
+            <el-col v-for="member in founderMembers" :key="member.key" :lg="8" :md="12" :sm="24">
               <div class="member-card card">
                 <div class="member-image">
                   <el-icon><Avatar /></el-icon>
@@ -24,7 +24,7 @@
                 <div class="member-info">
                   <h4 class="member-name">{{ member.name }}</h4>
                   <p class="member-position">{{ member.position }}</p>
-                  <div class="member-tags" v-if="member.tags">
+                  <div class="member-tags">
                     <span v-for="tag in member.tags" :key="tag" class="member-tag">{{ tag }}</span>
                   </div>
                   <div class="member-bio">
@@ -38,10 +38,10 @@
 
         <!-- 2. 行業專家顧問 -->
         <div class="team-category">
-          <h2 class="category-title">INDUSTRY ADVISORS</h2>
-          <h3 class="category-subtitle">行業專家顧問（法律、金融、物流）</h3>
+          <h2 class="category-title">{{ t('team.categories.advisors.title') }}</h2>
+          <h3 class="category-subtitle">{{ t('team.categories.advisors.subtitle') }}</h3>
           <el-row :gutter="32">
-            <el-col v-for="member in advisors" :key="member.name" :lg="6" :md="12" :sm="24">
+            <el-col v-for="member in advisorMembers" :key="member.key" :lg="6" :md="12" :sm="24">
               <div class="member-card card small">
                 <div class="member-image mini">
                   <el-icon><Briefcase /></el-icon>
@@ -58,10 +58,10 @@
 
         <!-- 3. 商業諮詢與理財團隊 -->
         <div class="team-category">
-          <h2 class="category-title">CONSULTING & WEALTH</h2>
-          <h3 class="category-subtitle">商業諮詢與理財團隊</h3>
+          <h2 class="category-title">{{ t('team.categories.consulting.title') }}</h2>
+          <h3 class="category-subtitle">{{ t('team.categories.consulting.subtitle') }}</h3>
           <el-row :gutter="32">
-            <el-col v-for="member in consulting" :key="member.name" :lg="8" :md="12" :sm="24">
+            <el-col v-for="member in consultingMembers" :key="member.key" :lg="8" :md="12" :sm="24">
               <div class="member-card card">
                 <div class="member-image">
                   <el-icon><User /></el-icon>
@@ -78,10 +78,10 @@
 
         <!-- 4. 區域負責人 -->
         <div class="team-category">
-          <h2 class="category-title">REGIONAL HEADS</h2>
-          <h3 class="category-subtitle">區域負責人</h3>
+          <h2 class="category-title">{{ t('team.categories.regional.title') }}</h2>
+          <h3 class="category-subtitle">{{ t('team.categories.regional.subtitle') }}</h3>
           <el-row :gutter="32">
-            <el-col v-for="member in regional" :key="member.name" :lg="8" :md="12" :sm="24">
+            <el-col v-for="member in regionalMembers" :key="member.key" :lg="8" :md="12" :sm="24">
               <div class="member-card card">
                 <div class="member-image">
                   <el-icon><Location /></el-icon>
@@ -102,10 +102,10 @@
     <section class="section cta-section gradient-bg">
       <div class="container">
         <div class="cta-content text-center">
-          <h2 class="cta-title">諮詢我們的專家團隊</h2>
-          <p class="cta-subtitle">點擊下方按鈕，與我們的顧問安排一次深入的診斷會</p>
+          <h2 class="cta-title">{{ t('team.cta.title') }}</h2>
+          <p class="cta-subtitle">{{ t('team.cta.subtitle') }}</p>
           <el-button type="primary" size="large" class="cta-button" @click="goToContact">
-            預約專家會議
+            {{ t('team.cta.button') }}
           </el-button>
         </div>
       </div>
@@ -114,107 +114,67 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { Avatar, Briefcase, User, Location } from '@element-plus/icons-vue'
 
+const { t, tm } = useI18n()
 const router = useRouter()
 
 const goToContact = () => {
   router.push('/contact')
 }
 
-// 創始人與高管層
-const founders = [
-  {
-    name: 'Ada 黃芊惠',
-    position: '通海南洋創始人 | CEO',
-    tags: ['CFP®', 'WMI 家辦顧問'],
-    bio: [
-      'Finexis Advisory 總監, BNI 新加坡寶豐分會主席 (2022-2023)',
-      '留學移民新加坡18年，專注一站式金融解決方案，包括保險、基金、家族信託、VCC 及銀行開戶等。'
-    ]
-  },
-  {
-    name: 'Mars 楊棟',
-    position: '聯合創始人 | 跨境商業落地執行官',
-    tags: ['北京社科院數學博士'],
-    bio: [
-      '新加坡文化與教育協會會長 (CEAS), 新加坡文化與教育學院院長',
-      '擁有28年國際教育經驗。負責市場考察與落地、身份與教育規劃及本地化運營。'
-    ]
-  },
-  {
-    name: 'Wendy 魏文帝',
-    position: '跨境商業落地執行官（台灣）',
-    tags: ['創投公司 CEO'],
-    bio: [
-      '擁有超過20年企業顧問經驗, 擅長資源整合與銷售。',
-      '具備敏銳的市場分析能力, 為台灣企業家提供專業落地建議。'
-    ]
-  }
-]
+// 使用 tm() 获取原始消息对象（包括数组）
+const founderMembers = computed(() => {
+  const members = tm('team.members.founders') as Record<string, {
+    name: string
+    position: string
+    tags: string[]
+    bio: string[]
+  }>
+  return Object.keys(members).map(key => ({
+    key,
+    ...members[key]
+  }))
+})
 
-// 行業專家顧問
-const advisors = [
-  {
-    name: 'Prof. Dr Thomas Sim',
-    position: 'FIATA 主席 | 海聯集團 CEO',
-    desc: '新加坡物流學院主席, 世界銀行、聯合國貿發會議資源專家。獲新加坡總統頒發國家獎項。'
-  },
-  {
-    name: 'Gavin 柳達禮',
-    position: '東方投融金控集團創始人',
-    desc: '30多年金融經驗, 擅長投資及操盤科技企業上市。專注於大健康、AI 經濟及 RWA 技術。'
-  },
-  {
-    name: 'Linus 伍修宏',
-    position: '敦升律師事務所大律師',
-    desc: '1998年註冊律師, 專注資本市場融資、私募基金、合規諮詢及金融科技法律服務。'
-  },
-  {
-    name: 'Ronald 朱國禎',
-    position: '朱國禎律師事務所創始人',
-    desc: '全球家辦 (GFO) 協會會員。提供 GIP、PR 申請、家辦設立及遺囑認證服務。'
-  }
-]
+const advisorMembers = computed(() => {
+  const members = tm('team.members.advisors') as Record<string, {
+    name: string
+    position: string
+    desc: string
+  }>
+  return Object.keys(members).map(key => ({
+    key,
+    ...members[key]
+  }))
+})
 
-// 商業諮詢與理財團隊
-const consulting = [
-  {
-    name: 'Wendy 劉泳岐',
-    position: 'Finnex Pte Ltd 業務發展總監',
-    desc: '10年商業顧問經驗, 與超過60間銀行合作。擅長企業融資與市場進軍策略。'
-  },
-  {
-    name: 'Jevon 何建洛',
-    position: 'Finnex Pte Ltd 政府津貼顧問',
-    desc: '25年經商經驗, KAH 執照持有人。專精政府津貼諮詢、企業策略轉型。'
-  },
-  {
-    name: 'Martin 許岩',
-    position: '資深理財規劃師 (Finexis)',
-    desc: '英國倫敦大學學士。深耕新加坡金融業多年, 為高淨值客戶提供財富管理服務。'
-  }
-]
+const consultingMembers = computed(() => {
+  const members = tm('team.members.consulting') as Record<string, {
+    name: string
+    position: string
+    desc: string
+  }>
+  return Object.keys(members).map(key => ({
+    key,
+    ...members[key]
+  }))
+})
 
-// 區域負責人
-const regional = [
-  {
-    name: '陳利',
-    position: '四川辦事處負責人',
-    desc: '常駐成都, 協助中國企業家開拓東南亞市場, 提供全鏈路出海解決方案。'
-  },
-  {
-    name: 'May Lee',
-    position: '馬來西亞負責人',
-    desc: '農先生集團董事長, BNI 巴生資深顧問。專精資產配置、MM2H 申請及戰略規劃。'
-  },
-  {
-    name: 'Andy Chia 謝漢亮',
-    position: 'Jalin 家寧 業務發展總監',
-    desc: '20年金融服務經驗 (UOB, HSBC)。深厚新馬金融網絡, 提供跨境金融及房產服務。'
-  }
-]
+const regionalMembers = computed(() => {
+  const members = tm('team.members.regional') as Record<string, {
+    name: string
+    position: string
+    desc: string
+  }>
+  return Object.keys(members).map(key => ({
+    key,
+    ...members[key]
+  }))
+})
 </script>
 
 <style scoped>
